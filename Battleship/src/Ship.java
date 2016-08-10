@@ -1,5 +1,5 @@
 
-public class Ships {
+public class Ship {
 	
 	public String shipName;
 	public int shipSpaces;
@@ -7,7 +7,7 @@ public class Ships {
 	public int shipY;
 	public int vertical;
 	
-	public Ships() {
+	public Ship() {
 		shipName = "";
 		shipSpaces = 0;
 		shipX = 0;

@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class GamePlay {
+public class Game {
 	
-	static Player[] player = new Player[2];
+	static Players[] player = new Players[2];
 	
 	static Scanner holder = new Scanner(System.in);
 	
@@ -40,7 +40,7 @@ public class GamePlay {
 		for (int p = 0; p <= 1; p++)
 		{
 			// Set player name
-			player[p] = new Player(p);
+			player[p] = new Players(p);
 		}
 	}
 	
@@ -84,3 +84,4 @@ public class GamePlay {
 	}
 	
 }
+

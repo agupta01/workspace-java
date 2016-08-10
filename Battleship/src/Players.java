@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Player {
+public class Players {
 	
 	String name;
 	int shipsLeft;
@@ -8,13 +8,13 @@ public class Player {
 	int[][] defenseGrid = new int[10][10];
 	int[][] offenseGrid = new int[10][10];
 	
-	Ships[] ships = new Ships[5];
+	Ship[] ships = new Ship[5];
 	
 	Scanner holder = new Scanner(System.in);
 
 
 	// Constructor method
-	public Player(int p) {
+	public Players(int p) {
 		System.out.print("Enter player name: ");
 		String playerName = holder.next();
 		name = playerName;
@@ -41,7 +41,7 @@ public class Player {
 		// Cycles through 5 ships and assigns names and space values to them
 		for (int i = 4; i >= 0; i--)
 		{
-			ships[i] = new Ships();
+			ships[i] = new Ship();
 			ships[i].shipSpaces = i + 1;
 			 
 			switch (i) {
