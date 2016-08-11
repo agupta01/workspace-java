@@ -22,16 +22,19 @@ public class Game {
 				player[t].printDefenseGrid();
 				fire(t);
 				
-				System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-						+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-						+ "Your turn is over. Please pass the device to your opponent."
+				System.out.print("Your turn is over. Please pass the device to your opponent."
 						+ "\nOpponent, press enter when you have the device.");
 				Scanner temp = new Scanner(System.in);
 				String gameEnter = temp.nextLine();
 				if (gameEnter.equals('\n') == false)
-					t++;
+					t = 1 - t;
 			}
 		}
+		
+		if (player[0].shipsLeft == 0)
+			System.out.println("Player 1 wins!");
+		if (player[1].shipsLeft == 0)
+			System.out.println("Player 2 wins!");
 	}
 	
 	
@@ -63,8 +66,12 @@ public class Game {
 		if (opponentDefense == 1 | opponentDefense == 2 | opponentDefense == 3 | 
 				opponentDefense == 4 | opponentDefense == 5)
 		{
-			System.out.println("Hit!");	
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+						+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+						+ "Hit!");	
 			player[opponent].ships[opponentDefense - 1].shipSpaces--;
+			
+			System.out.println(player[opponent].ships[opponentDefense - 1].shipName);
 			
 			// Code to run if player sinks ship
 			if (player[opponent].ships[opponentDefense - 1].shipSpaces == 0)
@@ -73,13 +80,19 @@ public class Game {
 				System.out.println("You sunk the " + player[opponent].ships[opponentDefense - 1].shipName + "!");
 			}
 			
+			// Change values on both boards to reflect hit
 			player[turn].offenseGrid[targetX][targetY] = 7;
-			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+			player[opponent].defenseGrid[targetX][targetY] = 7;
 			
 			player[opponent].ships[opponentDefense - 1].shipSpaces--;
 		} else {
-			System.out.println("Miss.");
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+						+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+						+ "Miss.");
+			
+			// Change values on both boards to reflect miss
 			player[turn].offenseGrid[targetX][targetY] = 6;
+			player[opponent].defenseGrid[targetX][targetY] = 6;
 		}			
 	}
 	

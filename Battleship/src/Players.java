@@ -137,6 +137,9 @@ public class Players {
 		// Initialize ships
 		initShip();
 		
+		// Print array for context
+		printDefenseGrid();
+		
 		// Set ships positions and orientations
 		for (int i = 4; i >=0 ; i--)
 		{
@@ -146,12 +149,12 @@ public class Players {
 		
 		if (p == 0) {
 			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-					+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 					+ "Your ships are now locked. "
 					+ "Please pass the device to player 2.");
 		}else{
-			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-					+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+			System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 					+ "All ships are now locked. "
 					+ "Please pass the device to player 1."
 					+ "\nPlayer 1, hit enter to begin the game.");
