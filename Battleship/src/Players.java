@@ -5,6 +5,9 @@ public class Players {
 	String name;
 	int shipsLeft;
 	
+	String[] xAxis = "abcdefghij".split("");
+	
+	
 	int[][] defenseGrid = new int[10][10];
 	int[][] offenseGrid = new int[10][10];
 	
@@ -30,6 +33,8 @@ public class Players {
 		}
 		
 		setupShip(p);
+		
+		
 		
 	}
 
@@ -104,29 +109,37 @@ public class Players {
 
 	// Prints player's defensive grid
 	public  void printDefenseGrid() {
+		System.out.println("   1   2   3   4   5   6   7   8   9   10");
+		
 		for (int x = 0; x < 10; x++) 
 		{
+			System.out.print(xAxis[x].toUpperCase() + "  ");
+			
 			for (int y = 0; y < 10; y++) 
 			{
 				System.out.print(defenseGrid[x][y]);
 				System.out.print(" | ");
 			}
 			
-			System.out.println("\n———————————————————————————————————————");
+			System.out.println("\n   ———————————————————————————————————————");
 		}
 	}
 	
 	// Prints player's offensive grid
 	public void printOffenseGrid() {
+		System.out.println("   1   2   3   4   5   6   7   8   9   10");
+		
 		for (int x = 0; x < 10; x++) 
 		{
+			System.out.print(xAxis[x].toUpperCase() + "  ");
+			
 			for (int y = 0; y < 10; y++) 
 			{
 				System.out.print(offenseGrid[x][y]);
 				System.out.print(" | ");
 			}
 			
-			System.out.println("\n———————————————————————————————————————");
+			System.out.println("\n   ———————————————————————————————————————");
 		}
 	}
 	
